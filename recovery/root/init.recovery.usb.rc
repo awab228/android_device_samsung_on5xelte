@@ -1,5 +1,4 @@
 on init
-    mkdir /sys/devices/13600000.usb/13600000.dwc3/gadget/lun0/file 
     chown system system /sys/class/android_usb/android0/terminal_version
     chmod 0660 /sys/class/android_usb/android0/terminal_version
     chown system system /sys/devices/13600000.usb/13600000.dwc3/gadget/lun0/file
