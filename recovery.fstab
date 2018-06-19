@@ -1,16 +1,20 @@
 
-# <mnt_point>	<type>	    <src>		<mnt_flags and options>	<fs_mgr_flags>	
-# mount point		fstype  device					device2			flags
+/boot		emmc	/dev/block/bootdevice/by-name/BOOT
+/recovery	emmc	/dev/block/bootdevice/by-name/RECOVERY	flags=backup=1
 /system		ext4	/dev/block/bootdevice/by-name/SYSTEM
-/system_image		emmc	/dev/block/bootdevice/by-name/SYSTEM				flags=flashimg=1
-/cache			ext4	/dev/block/bootdevice/by-name/CACHE
-/data			ext4	/dev/block/bootdevice/by-name/USERDATA				flags=encryptable=footer;length=-16384 
-/boot			emmc	/dev/block/bootdevice/by-name/BOOT                  
-/recovery		emmc	/dev/block/bootdevice/by-name/RECOVERY				flags=backup=1
-/efs            ext4    /dev/block/bootdevice/by-name/EFS                   flags=backup=1
+/data		ext4	/dev/block/bootdevice/by-name/USERDATA	flags=encryptable=footer;length=-16384
+/cache		ext4	/dev/block/bootdevice/by-name/CACHE
+/preload    ext4    /dev/block/bootdevice/by-name/HIDDEN
+/modem		emmc	/dev/block/bootdevice/by-name/RADIO	flags=backup=1;display="Baseband"
+/modem_debug	emmc	/dev/block/bootdevice/by-name/CP_DEBUG	flags=backup=1;display="Baseband (Debug)";subpartitionof=/modem
+/efs		ext4	/dev/block/bootdevice/by-name/EFS	flags=backup=1;display="EFS"
+/cpefs      ext4    /dev/block/bootdevice/by-name/CPEFS flags=backuo=1;display="CPEFS";subpartitionof=/efs
 
-/external_sd     vfat       /dev/block/mmcblk1p1    /dev/block/mmcblk1   flags=display="Micro SDcard";storage;wipeingui;removable
-/usb-otg         vfat       /dev/block/sda1         /dev/block/sda       flags=display="USB-OTG";storage;wipeingui;removable
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sde1 /dev/block/sde		flags=display="USB-OTG";storage;wipeingui;removable
+/misc		emmc	/dev/block/bootdevice/by-name/OTA
+
+
 
 /m9kefs1         emmc   /dev/block/mmcblk0p5 flags=backup=1;display=m9kefs1
 /m9kefs2         emmc   /dev/block/mmcblk0p6 flags=backup=1;subpartitionof=/m9kefs2
