@@ -8,7 +8,7 @@
 /modem		emmc	/dev/block/bootdevice/by-name/RADIO	flags=backup=1;display="Baseband"
 /modem_debug	emmc	/dev/block/bootdevice/by-name/CP_DEBUG	flags=backup=1;display="Baseband (Debug)";subpartitionof=/modem
 /efs		ext4	/dev/block/bootdevice/by-name/EFS	flags=backup=1;display="EFS"
-/cpefs      emmc    /dev/block/bootdevice/by-name/CPEFS flags=backuo=1;display="CPEFS";subpartitionof=/efs
+/cpefs      emmc    /dev/block/bootdevice/by-name/CPEFS flags=backup=1;display="CPEFS";subpartitionof=/efs
 
 /external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	flags=display="Micro SDcard";storage;wipeingui;removable
 /usb-otg	vfat	/dev/block/sde1 /dev/block/sde		flags=display="USB-OTG";storage;wipeingui;removable
