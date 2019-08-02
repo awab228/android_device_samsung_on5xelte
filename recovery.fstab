@@ -10,8 +10,8 @@
 /efs		ext4	/dev/block/bootdevice/by-name/EFS	flags=backup=1;display="EFS"
 /cpefs      emmc    /dev/block/bootdevice/by-name/CPEFS flags=backup=1;display="CPEFS";subpartitionof=/efs
 
-/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	flags=display="Micro SDcard";storage;wipeingui;removable
-/usb-otg	vfat	/dev/block/sde1 /dev/block/sde		flags=display="USB-OTG";storage;wipeingui;removable
+/external_sd	vfat	/dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sda1 /dev/block/sda		flags=display="USB-OTG";storage;wipeingui;removable
 /misc		emmc	/dev/block/bootdevice/by-name/OTA
 
 
